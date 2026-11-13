@@ -1,11 +1,26 @@
 # Fretamento360
 
-Sistema web de gestão operacional para transporte fretado.
+Aplicação web demonstrativa para gestão operacional de transporte fretado.
 
-## Publicação de demonstração
+## Demonstração
 
-O código-fonte completo está no arquivo `Fretamento360-source.zip`. O GitHub Actions extrai o projeto, instala as dependências, compila o frontend e publica o conteúdo estático no GitHub Pages.
+A versão inicial é um frontend estático em `public/`, pronto para GitHub Pages. O app disponibiliza dashboard, diagnóstico operacional, ocorrências, quebras e atrasos, programação, escalas, frota, motoristas, rotas, SLA, relatórios CSV e procedimentos.
 
-A demonstração utiliza dados fictícios armazenados no navegador. Não utilize dados reais de motoristas ou passageiros até configurar e validar o Supabase, autenticação e políticas de segurança.
+## Publicação automática
 
-Acompanhe a publicação em **Actions**. Após a ativação do GitHub Pages, o site ficará disponível em `https://fersahub.github.io/Fretamento360/`.
+1. No repositório, abra **Settings → Pages**.
+2. Em **Build and deployment → Source**, selecione **GitHub Actions**.
+3. Acesse **Actions** e acompanhe a execução do workflow **Publicar Fretamento360 no GitHub Pages**.
+4. Após a execução bem-sucedida, acesse https://fersahub.github.io/Fretamento360/.
+
+A publicação é disparada por alterações na pasta `public/` ou no workflow.
+
+## Dados e segurança
+
+Esta primeira versão usa dados demonstrativos gravados no armazenamento local do navegador (`localStorage`). Os registros não são sincronizados entre computadores ou usuários. Não insira dados reais ou pessoais de motoristas e passageiros. Antes do uso operacional, será necessário implementar backend, autenticação, banco de dados, controle de acesso, backups e políticas de privacidade.
+
+O índice de SLA é apenas ilustrativo; configure critérios contratuais antes de usá-lo em relatórios oficiais.
+
+## Desenvolvimento futuro
+
+A próxima etapa será conectar o frontend a um backend Supabase com autenticação, banco de dados e regras de acesso. O GitHub Pages hospeda apenas arquivos estáticos e não substitui o backend.
